@@ -60,7 +60,7 @@ async def mix(client, message):
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
             )
-            await msg.edit("Processing Image...")
+            await msg.edit("Processing your image ★...")
             image = Image.open(a)
             red, green, blue = image.split()
             new_image = Image.merge("RGB", (green, red, blue))
@@ -101,7 +101,7 @@ async def black_white(client, message):
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
             )
-            await msg.edit("Processing Image...")
+            await msg.edit("Processing your Image...")
             image_file = cv2.imread(a)
             grayImage = cv2.cvtColor(image_file, cv2.COLOR_BGR2GRAY)
             cv2.imwrite(edit_img_loc, grayImage)
@@ -141,7 +141,7 @@ async def normal_blur(client, message):
             a = await client.download_media(
                 message=message.reply_to_message, file_name=download_location
             )
-            await msg.edit("Processing Image...")
+            await msg.edit("Processing your  Image...")
             OriImage = Image.open(a)
             blurImage = OriImage.filter(ImageFilter.BLUR)
             blurImage.save(edit_img_loc)
